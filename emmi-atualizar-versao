@@ -1,0 +1,22 @@
+#!/bin/bash
+
+#Emmi Inteligente versão 1.0
+#Emmi Linux
+
+# Não é root, logar como root
+if [ "$(id -u)" != "0" ]
+then
+        echo "$(tput setaf 2)Você precisa de poderes de super vaca, para rodar este programa."
+        su -l
+
+else
+        echo "Super vaca ativada, vamos atualizar o a versão" ;sleep 1
+	apt-get moo
+	apt-get update
+	echo "Update Concluído..." ;sleep 2
+	apt dist-upgrade
+	echo "Concluído...Tenha um bom dia!"
+fi
+
+
+

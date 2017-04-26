@@ -1,0 +1,17 @@
+#!/bin/bash
+
+#Emmi Inteligente versão 1.0
+#Emmi Linux
+
+# Não é root, logar como root
+if [ "$(id -u)" != "0" ]
+then
+        echo "$(tput setaf 2)Você precisa de poderes de super vaca, para rodar este programa."
+        su -l
+else
+        echo "Super vaca ativada, $(tput setaf 3)vamos procurar o pacote" ;sleep 1
+fi
+#fim
+
+	echo "Iniciando a procura..." ;sleep 1
+	apt search $1

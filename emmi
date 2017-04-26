@@ -1,0 +1,191 @@
+#!/bin/bash
+#Box de manutenção da Emmi Linux
+#Script escrito por Slackjeff <lrcjefferson@gmail.com>
+#Licença GPL
+#Emmi Inteligente
+#
+#
+#
+#
+#################################################
+# Instalar, Procurar, Remover, Atualizar, Limpar
+#################################################
+#
+#
+#
+#
+#
+
+
+clear ;
+menu()
+  {
+echo "------------------------------------------"
+echo "	      	Emmi #Manutenção		"
+echo "						"
+echo "|-----------------------------------------"
+echo "|	Escolha uma das opções abaixo:		"
+echo "|-----------------------------------------"
+echo "| 0) Logar como root			"
+echo "| 1) Instalar				"
+echo "| 2) Procurar				"
+echo "| 3) Remover				"
+echo "| 4) Atualizar				"
+echo "| 5) Limpar				"
+echo "| 6) Ajuda				"
+echo "| 7) Sair					"
+echo "|-----------------------------------------"
+echo "|-----------------------------------------"
+
+read opcao
+case $opcao in
+#####################
+#--Opções do menu
+#####################
+
+ 0) root ;;
+ 1) instalar ;;
+ 2) procurar ;;
+ 3) remover ;;
+ 4) atualizar ;;
+ 5) limpar ;;
+ 6) ajuda ;;
+ 7) exit ;;
+ *) "Opção Inexistente" ;
+clear ;
+menu ;;
+
+esac
+   }
+
+#--Começo do codigo
+
+###########################
+#--Logar como root
+###########################
+
+root()
+ {
+	echo "Você deseja logar como root? [s/n]"
+	read resposta
+	test "$resposta" = "n" && menu
+	echo
+if [ "$(id -u)" != "0" ]
+
+ then
+	su -
+
+ else
+	echo "Você já possui os poderes de super vaca."
+	echo
+	echo
+	menu
+	echo
+fi
+
+ }
+
+
+##########################
+#-- Instalação pacote
+##########################
+
+instalar()
+ {
+	clear
+	echo "Digite o nome do programa"
+	read programa
+	apt install $programa
+	echo
+	echo "Concluído..." ;sleep 1
+	menu
+ }
+
+###########################
+#--Procurar no sistema
+###########################
+
+procurar()
+ {
+	clear
+	echo "Digite o nome do programa"
+	read programa
+	apt search $programa
+	echo "Concluído..."
+	echo
+	menu  
+ }
+
+#############################
+#--Remover pacotes do sistema
+#############################
+
+remover()
+ {
+	clear
+	echo "Digite o nome do programa"
+	read programa
+	apt remove $programa
+	echo "Concluído..."
+	echo
+	menu
+ }
+
+##########################
+#--Atualizar o sistema
+##########################
+
+atualizar()
+ {
+	clear
+	echo "Este procedimento pode demorar, dependendo da conexão da sua internet" ;sleep 2
+	echo "Você deseja continuar? [s/n]"
+	read resposta		
+	test "$resposta" = "n" && menu
+	apt update
+	echo "Concluímos o update do repositorio"
+	apt upgrade
+	echo
+	echo "Concluímos"
+	menu
+ }
+
+#########################
+#--Limpar o sistema
+#########################
+
+limpar()
+ {
+	clear
+	echo "Vamos limpar o sistema agora" ;sleep 1
+	apt clean
+	echo "Concluímos..." ;sleep 1
+	apt autoclean
+	echo "Concluído" ;sleep 1
+	menu
+ }
+
+ajuda()
+ {
+	clear
+	echo
+	echo
+	echo "########################################################################"
+	echo
+	echo "Lembre-se de não utilizar espaços na procura ou instalação dos programas"
+	echo
+	echo "Utilize SEMPRE letras minusculas e para separar arquivos utilize -"
+	echo
+	echo "Exemplo CERTO:"
+	echo "google-chrome, firefox-esr, acorn-fdisk"
+	echo
+	echo "Exemplo ERRADO:"
+	echo "google chrome, firefox esr"
+	echo
+	echo "########################################################################" ;sleep 5
+	echo
+	echo
+	menu
+ }
+clear
+menu

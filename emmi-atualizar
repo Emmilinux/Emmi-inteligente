@@ -1,0 +1,18 @@
+#!/bin/bash
+#Emmi Inteligente versão 1.0
+#Emmi Linux
+
+
+if [ "$(id -u)" != "0" ]
+then
+	echo "$(tput setaf 2)Você precisa de poderes de super vaca, para rodar este programa."
+	su -l
+
+else
+	
+        echo "$(tput setaf 1)Super vaca ativada, vamos atualizar o sistema" ;sleep 1
+        apt-get update  # atualiza o repositorio
+        echo "$(tput setaf 2)Concluído..." ;sleep 1
+        apt-get upgrade # atualiza o sistema 
+        echo "$(tput setaf 2)Concluímos, tenha um ótimo dia!"
+fi

@@ -1,0 +1,20 @@
+#!/bin/bash
+#Emmi Inteligente versão 1.0
+#Emmi Linux
+
+# Não é root, logar como root
+if [ "$(id -u)" != "0" ]
+then
+        echo "$(tput setaf 2)Você precisa de poderes de super vaca, para rodar este programa."
+        su -l
+else
+else
+        echo "Super vaca ativada, $(tput setaf 3)vamos limpar o sistema (MOOOO)" ;sleep 1
+fi
+#fim
+
+	echo "$(tput setaf 1)Iniciando limpeza" ;sleep 1
+	apt clean
+	echo "$(tput setaf 2)..." ;sleep 1
+	apt autoclean
+	echo "$(tput setaf 2)Concluímos a limpeza, tenha um ótimo dia!"

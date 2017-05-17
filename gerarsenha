@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # Script para gerar senhas seguras
 # Slackjeff <lrcjefferson@gmail.com>
 # Opção Byns 14 é para 14 digitos

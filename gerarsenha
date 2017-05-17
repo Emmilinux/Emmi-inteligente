@@ -1,13 +1,10 @@
 #!/bin/bash
 ##########################################
-#
-#
 # Script para gerar senhas seguras
 # Slackjeff <lrcjefferson@gmail.com>
 # Opção Byns 14 é para 14 digitos
 # Aumentando o Byns, a senha obviamente
 # irá aumentar tbm.
-#
 ######## VARIAVEIS CORES #################
 branco="\033[1;37m"
 verde="\033[0;32m"
@@ -15,8 +12,6 @@ purple="\033[0;35m"
 cinza="\033[0;37m"
 vermelhoclaro="\033[1;31m"
 fechacor="\033[0m"
-#
-#
 ###########################################
 
 clear

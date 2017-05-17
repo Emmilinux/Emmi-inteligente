@@ -1,0 +1,15 @@
+#!/bin/sh
+# Script gerador de senhas
+# desenvolvido por Alexandre Pina
+# Mail: pina.ajs@gmail.com
+# Data de criação: 6-1-2014
+
+
+clear
+senha=`pwgen -Byns 10 1 | tee /home/$USER/novasenha.txt`
+
+echo "Gerador de senhas"
+echo "------------------------------------------------"
+echo "Sua senha: $senha"
+echo "Senha gravada em: /home/$USER/novasenha.txt"
+echo "------------------------------------------------"

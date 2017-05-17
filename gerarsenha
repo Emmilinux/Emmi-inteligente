@@ -5,6 +5,9 @@
 # Opção Byns 14 é para 14 digitos
 # Aumentando o Byns, a senha obviamente
 # irá aumentar tbm.
+#
+######## Dependencias ####################
+#- pwgen
 ######## VARIAVEIS CORES #################
 branco="\033[1;37m"
 verde="\033[0;32m"

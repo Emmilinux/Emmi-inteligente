@@ -1,15 +1,15 @@
 #!/bin/sh
-# Script gerador de senhas
-# desenvolvido por Alexandre Pina
-# Mail: pina.ajs@gmail.com
-# Data de criação: 6-1-2014
-
+# Script para gerar senhas seguras
+# Slackjeff <lrcjefferson@gmail.com>
+# Opção Byns 14 é para 14 digitos
+# Aumentando a senha obviamente irá aumentar tbm.
 
 clear
-senha=`pwgen -Byns 10 1 | tee /home/$USER/novasenha.txt`
-
+senha=`pwgen -Byns 14 1 | tee /home/$USER/senha.txt`
+echo
+echo "================================================"
 echo "Gerador de senhas"
-echo "------------------------------------------------"
-echo "Sua senha: $senha"
-echo "Senha gravada em: /home/$USER/novasenha.txt"
-echo "------------------------------------------------"
+echo "================================================"
+echo "Sua senha é: $senha"
+echo "Senha gravada em: /home/$USER/senha.txt"
+echo "================================================"
